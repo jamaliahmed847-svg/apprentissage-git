@@ -1,1 +1,2 @@
 "Bienvenue dans mon projet Git" 
+"Je maitrise les commandes de base de Git" 
