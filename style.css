@@ -39,3 +39,8 @@ li {
     max-width: 350px;
     border-radius: 5px;
 }
+.completed {
+    text-decoration: line-through;
+    color: gray;
+    cursor: pointer;
+}
