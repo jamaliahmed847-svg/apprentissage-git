@@ -7,17 +7,58 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Ma liste de tâches</h1>
-    <form id="taskForm">
+
+    <main class="container">
+        <header>
+            <h1>Ma liste de tâches</h1>
+            <p>Organisez votre journée simplement.</p>
+        </header>
+
+        <form id="taskForm">
+            <input
+                type="text"
+                id="taskInput"
+                placeholder="Quelle tâche voulez-vous ajouter ?"
+                maxlength="150"
+                required
+            >
+            <button type="submit" id="submitButton">Ajouter</button>
+        </form>
+
+        <section class="summary">
+            <span>Total : <strong id="totalTasks">0</strong></span>
+            <span>Terminées : <strong id="completedTasks">0</strong></span>
+            <span>Restantes : <strong id="remainingTasks">0</strong></span>
+        </section>
+
         <input
-            type="text"
-            id="taskInput"
-            placeholder="Entrer une tâche"
-            required
+            type="search"
+            id="searchInput"
+            placeholder="Rechercher une tâche..."
+            aria-label="Rechercher une tâche"
         >
-        <button type="submit">Ajouter</button>
-    </form>
-    <ul id="taskList"></ul>
+
+        <nav class="filters" aria-label="Filtrer les tâches">
+            <button type="button" class="filter active" data-filter="all">
+                Toutes
+            </button>
+            <button type="button" class="filter" data-filter="active">
+                À faire
+            </button>
+            <button type="button" class="filter" data-filter="completed">
+                Terminées
+            </button>
+        </nav>
+
+        <ul id="taskList"></ul>
+
+        <p id="emptyMessage">Aucune tâche pour le moment.</p>
+
+        <button type="button" id="clearCompleted" class="clear-button">
+            Supprimer les tâches terminées
+        </button>
+    </main>
+
     <script src="script.js"></script>
 </body>
 </html>
